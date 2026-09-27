@@ -4,49 +4,105 @@ public class Matriser {
 
 	// a)
 	public static void skrivUt(int[][] matrise) {
-		
-		// TODO
-		throw new UnsupportedOperationException("Metoden skrivUt ikke implementert");
+
+		for(int i = 0; i < matrise.length; i++){
+			for(int j = 0; j < matrise[i].length; j++){
+				System.out.println(matrise[i][j]);
+			}
+		}
+
 	}
 
 	// b)
 	public static String tilStreng(int[][] matrise) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden tilStreng ikke implementert");
+		String str = "";
+
+		for(int i = 0; i < matrise.length; i++) {
+			for (int j = 0; j < matrise[i].length; j++) {
+
+				str = str + matrise[i][j];
+
+				if(j < matrise[i].length - 1){
+					str = str + " ";
+				}
+			}
+			str = str + "\n";
+		}
+		return str;
 		
 	}
 
 	// c)
 	public static int[][] skaler(int tall, int[][] matrise) {
 		
-		// TODO
-		throw new UnsupportedOperationException("Metoden skaler ikke implementert");
+		int [][] skalert = new int[matrise.length][matrise[0].length];
+
+		for(int i = 0; i < matrise.length; i++){
+			for(int j = 0; j < matrise[i].length; j++){
+				skalert [i][j] = matrise[i][j] * tall;
+			}
+		}
+		return skalert;
+
 	
 	}
 
 	// d)
 	public static boolean erLik(int[][] a, int[][] b) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden erLik ikke implementert");
-		
+		if(a.length != b.length){
+			return false;
+		}
+
+		for(int i = 0; i < a.length; i++) {
+			for (int j = 0; j < a[i].length; j++) {
+				if (a[i][j] != b[i][j]) {
+					return false;
+				}
+				if(a[i].length != b[i].length){
+					return false;
+				}
+			}
+		}
+		return true;
 	}
 	
 	// e)
 	public static int[][] speile(int[][] matrise) {
 
-		// TODO
+		int [][] speil = new int[matrise.length][matrise[0].length];
 
-		throw new UnsupportedOperationException("Metoden speile ikke implementert");
+		for(int i = 0; i < matrise.length; i++) {
+			for (int j = 0; j < matrise[i].length; j++) {
+				speil[i][j] = matrise[i][j];
+			}
+		}
+		for(int i = 0; i < speil.length; i++) {
+			for (int j = i + 1; j < speil[i].length; j++) {
+				int temp = speil[j][i];
+				speil[j][i] = speil[i][j];
+				speil[i][j] = temp;
+			}
+			}
+		return speil;
+
 	
 	}
 
 	// f)
 	public static int[][] multipliser(int[][] a, int[][] b) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden multipliser ikke implementert");
+		int multiplisert[][] = new int[a.length][a[0].length];
+
+		for(int i = 0; i < a.length; i++) {
+			for (int j = 0; j < a[i].length; j++) {
+				for(int k = 0; k < b.length; k++){
+					multiplisert[i][j] += a[i][k] * b[k][j];
+				}
+			}
+		}
+		return multiplisert;
 	
 	}
 }
