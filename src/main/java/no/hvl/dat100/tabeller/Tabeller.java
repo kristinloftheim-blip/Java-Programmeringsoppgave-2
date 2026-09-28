@@ -16,22 +16,13 @@ public class Tabeller {
 	// b)
 	public static String tilStreng(int[] tabell) {
 
-		String resultat = "[";
-
-		for(int i = 0; i < tabell.length; i++){
-
-
-			if(i == tabell.length - 1){
-				resultat = resultat + Integer.toString(tabell[i]);
-			} else {
-				resultat = resultat + Integer.toString(tabell[i]) + ",";
-			}
-
+		String streng = "[";
+		for (int i = 0; i < tabell.length; i++) {
+			if (i > 0) streng += ",";
+			streng += tabell[i];
 		}
-		resultat = resultat + "]";
-
-
-		return resultat;
+		streng += "]";
+		return streng;
 	}
 
 	// c)
@@ -48,13 +39,10 @@ public class Tabeller {
 	// d)
 	public static boolean finnesTall(int[] tabell, int tall) {
 
-        for (int j : tabell){
-            if (j == tall){
-                return true;
-            }
-        }
+		for (int i : tabell) {
+			if (i == tall) return true;
+		}
 		return false;
-
 	}
 
 	// e)
@@ -90,13 +78,14 @@ public class Tabeller {
 	// g)
 	public static boolean erSortert(int[] tabell) {
 
-		for(int i = 1; i < tabell.length; i++){
-				if(tabell[i - 1] > tabell[i]){
-					return false;
-				}
+		if (tabell.length == 0) {
+			return true;
+		} else {
+			for (int i = 1; i < tabell.length; i++) {
+				if (tabell[i] < tabell[i - 1]) return false;
+			}
+			return true;
 		}
-		return true;
-
 	}
 
 	// h)

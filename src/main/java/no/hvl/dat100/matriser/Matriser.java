@@ -16,21 +16,19 @@ public class Matriser {
 	// b)
 	public static String tilStreng(int[][] matrise) {
 
-		String str = "";
+		String streng = "";
+		for (int[] tabell : matrise) {
 
-		for(int i = 0; i < matrise.length; i++) {
-			for (int j = 0; j < matrise[i].length; j++) {
-
-				str = str + matrise[i][j];
-
-				if(j < matrise[i].length - 1){
-					str = str + " ";
+			for (int i = 0; i < tabell.length; i++) {
+				if (i < tabell.length - 1) {
+					streng += tabell[i] + " ";
+				} else {
+					streng += tabell[i];
 				}
 			}
-			str = str + "\n";
+			streng += "\n";
 		}
-		return str;
-		
+		return streng;
 	}
 
 	// c)
@@ -51,18 +49,13 @@ public class Matriser {
 	// d)
 	public static boolean erLik(int[][] a, int[][] b) {
 
-		if(a.length != b.length){
-			return false;
-		}
+		if (a.length != b.length) return false;
+		for (int i = 0; i < a.length; i++) {
 
-		for(int i = 0; i < a.length; i++) {
+			if (a[i].length != b[i].length) return false;
 			for (int j = 0; j < a[i].length; j++) {
-				if (a[i][j] != b[i][j]) {
-					return false;
-				}
-				if(a[i].length != b[i].length){
-					return false;
-				}
+
+				if (a[i][j] != b[i][j]) return false;
 			}
 		}
 		return true;
