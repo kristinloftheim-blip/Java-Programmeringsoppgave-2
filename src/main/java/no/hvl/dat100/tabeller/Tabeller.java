@@ -48,15 +48,12 @@ public class Tabeller {
 	// d)
 	public static boolean finnesTall(int[] tabell, int tall) {
 
-		boolean bo = false;
-
         for (int j : tabell){
             if (j == tall){
-                bo = true;
-				break;
+                return true;
             }
         }
-		return bo;
+		return false;
 
 	}
 
@@ -93,17 +90,12 @@ public class Tabeller {
 	// g)
 	public static boolean erSortert(int[] tabell) {
 
-
-		boolean bo = true;
-
 		for(int i = 1; i < tabell.length; i++){
-
 				if(tabell[i - 1] > tabell[i]){
-					bo = false;
-					return bo;
+					return false;
 				}
 		}
-		return bo;
+		return true;
 
 	}
 
