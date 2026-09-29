@@ -2,6 +2,7 @@ package no.hvl.dat100.tabeller;
 
 public class Tabeller {
 
+	//Personer i gruppen: Kristin Loftheim, Erik Karlsen Kramer og Nicolai Lindløkken
 	// a)
 	public static void skrivUt(int[] tabell) {
 

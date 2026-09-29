@@ -1,7 +1,7 @@
 package no.hvl.dat100.matriser;
 
 public class Matriser {
-
+	//Personer i gruppen: Kristin Loftheim, Erik Karlsen Kramer og Nicolai Lindløkken
 	// a)
 	public static void skrivUt(int[][] matrise) {
 
