@@ -47,32 +47,21 @@ public class Tabeller {
 
 	// e)
 	public static int posisjonTall(int[] tabell, int tall) {
-
-		int pos = -1;
-		for(int i = 0; i < tabell.length; i++){
-			if(tabell[i] == tall){
-				pos = i;
-				break;
+		for (int i = 0; i < tabell.length; i++) {
+			if (tabell[i] == tall) {
+				return i;
 			}
 		}
-		return pos;
+		return -1;
 	}
 
 	// f)
 	public static int[] reverser(int[] tabell) {
-
-		int [] tbl = new int[tabell.length];
-		int j = 0;
-
-		for(int i = tabell.length - 1; i >= 0; i--){
-			if(j <= tabell.length - 1) {
-				tbl[j] = tabell[i];
-				j++;
-			}else {
-				break;
-			}
+		int[] ny = new int[tabell.length];
+		for (int i = 0; i < tabell.length; i++) {
+			ny[i] = tabell[tabell.length - 1 - i];
 		}
-		return tbl;
+		return ny;
 	}
 
 	// g)
